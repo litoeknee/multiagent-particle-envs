@@ -97,7 +97,7 @@ class Scenario(BaseScenario):
             comm.append(other.state.c)
             other_pos.append(other.state.p_pos - agent.state.p_pos)
         # print(len([agent.state.p_vel]), len([agent.state.p_pos]), len(entity_pos), len(other_pos), len(comm))
-        return np.concatenate([agent.state.p_vel] + [agent.state.p_pos] + entity_pos + other_pos + comm)
+        return np.concatenate([agent.state.p_vel] + [agent.state.p_pos] + entity_pos + other_pos)# + comm)
 
     def done(self, agent, world):
         for p in range(world.dim_p):
