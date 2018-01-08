@@ -99,8 +99,15 @@ class Scenario(BaseScenario):
         return np.concatenate([agent.state.p_vel] + [agent.state.p_pos] + entity_pos + other_pos)# + comm)
 
     def done(self, agent, world):
+        # TODO: Bounce object if it hits a wall
+        # print(agent.state.p_vel, agent.state.p_pos)
+        # print("+++++++++")
         for p in range(world.dim_p):
             x = abs(agent.state.p_pos[p])
             if x > 1.0:
-                return True
+                # agent.state.p_vel[p] *= -1
+                agent.state.p_pos[p] *= -1
+                # return True
+        # print(agent.state.p_vel)
+        # print("=========")
         return False
