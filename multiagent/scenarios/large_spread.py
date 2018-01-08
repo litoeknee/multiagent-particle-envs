@@ -103,4 +103,4 @@ class Scenario(BaseScenario):
             x = abs(agent.state.p_pos[p])
             if x > 1.0:
                 return True
-            return False
+        return False
